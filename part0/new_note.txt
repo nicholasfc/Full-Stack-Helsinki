@@ -1,0 +1,21 @@
+browser->server: http POST https://fullstack-exampleapp.herokuapp.com/new_note
+server -> browser: HTML-code
+browser->server: http GET https://fullstack-exampleapp.herokuapp.com/main.css
+server->browser: main.css
+browser->server: http GET https://fullstack-exampleapp.herokuapp.com/main.js
+server->browser: main.js
+
+note over browser:
+browser starts executing js-code
+that requests json data from server
+end note
+
+browser->server: hhtp GET https://fullstack-exampleapp.herokuapp.com/data.json
+server->browser: data.json
+
+note over browser:
+js code console logs json data
+js code creates new ul with attribute class for each json entry
+js code creates new li inside ul
+js code adds the new note added by the user
+end note

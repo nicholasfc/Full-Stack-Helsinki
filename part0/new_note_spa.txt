@@ -1,0 +1,20 @@
+note over browser:
+User fills a new note and presses "Send".
+end note
+
+browser->browser: e.preventDefault()
+browser->browser: notes.push()
+browser->browser: redrawNotes()
+
+note over browser:
+The browser saves the note and redraws the notes
+before sending it to the server
+end note
+
+browser->browser: sendToServer(note)
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server-->browser: Response 201 Created
+
+note over server:
+The server saves the new note
+end note
